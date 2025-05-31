@@ -1,4 +1,4 @@
-<{includeq file="$xoops_rootpath/modules/slideshow/templates/admin/slideshow_header.tpl"}>
+<{include file="$xoops_rootpath/modules/slideshow/templates/admin/slideshow_header.tpl"}>
 <table id="xo-category-sort" class="outer" cellspacing="1" width="100%">
     <thead>
     <th><{$smarty.const._AM_SLIDESHOW_CATEGORY_ID}></th>
@@ -13,8 +13,8 @@
 	        <{$category.category_title}>
         </td>
         <td class="txtcenter width10 xo-actions">
-            <a href="category.php?op=edit_category&amp;category_id=<{$category.category_id}>"><img class="tooltip" src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>
-            <a href="category.php?op=delete_category&amp;category_id=<{$category.category_id}>"><img class="tooltip" src="<{xoAdminIcons delete.png}>" alt="<{$smarty.const._DELETE}>" title="<{$smarty.const._DELETE}>"/></a>
+            <a href="category.php?op=edit_category&amp;category_id=<{$category.category_id}>"><img class="tooltip" src="<{xoAdminIcons 'edit.png'}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>
+            <a href="category.php?op=delete_category&amp;category_id=<{$category.category_id}>"><img class="tooltip" src="<{xoAdminIcons 'delete.png'}>" alt="<{$smarty.const._DELETE}>" title="<{$smarty.const._DELETE}>"/></a>
         </td>
     </tr>
     <{/foreach}>

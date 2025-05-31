@@ -58,13 +58,14 @@ $('.autoplay').slick({
 
 $(document).ready(function() {
 $('.responsive').slick({
-  dots: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 5,
-  slidesToScroll: 5,
-
-   arrows: true,
+  dots: false,
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  autoplay: true,
+  autoplaySpeed: 3500,
+  arrows: false,
+   
   responsive: [
     {
       breakpoint: 1024,

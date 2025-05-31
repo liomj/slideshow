@@ -4,7 +4,9 @@
 - Add slideshow image status in admin (liomj)
 - Add new options for blocks (liomj) 
 - Fix Block Item Order (liomj)
-- Fix Block Item Caption (liomj0
+- Fix Block Item Caption (liomj)
+- Update Nivo and Slick JS Settings (liomj)
+- Fix Smarty Errors (liomj)
 
 <h5>Slideshow 2.0 </h5>  Dev: Xoops 2.5.10, PHP 7.2.0
 - add item link target (liomj)
