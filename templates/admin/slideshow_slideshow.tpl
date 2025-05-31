@@ -1,4 +1,4 @@
-<{includeq file="$xoops_rootpath/modules/slideshow/templates/admin/slideshow_header.tpl"}>
+<{include file="$xoops_rootpath/modules/slideshow/templates/admin/slideshow_header.tpl"}>
 <table id="xo-item-sort" class="outer" cellspacing="1" width="100%">
     <thead>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_ID}></th>
@@ -68,9 +68,9 @@
 			<{else}>-<{/if}>
 		</td> 		
         <td class="txtcenter width10 xo-actions">
-            <img class="tooltip" onclick="display_dialog(<{$item.item_id}>, true, true, 'slide', 'slide', 400, 700);" src="<{xoAdminIcons display.png}>" alt="<{$smarty.const._PREVIEW}>" title="<{$smarty.const._PREVIEW}>" />
-            <a href="slideshow.php?op=edit_item&amp;item_id=<{$item.item_id}>"><img class="tooltip" src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>
-            <a href="slideshow.php?op=delete_item&amp;item_id=<{$item.item_id}>"><img class="tooltip" src="<{xoAdminIcons delete.png}>" alt="<{$smarty.const._DELETE}>" title="<{$smarty.const._DELETE}>"/></a>
+            <img class="tooltip" onclick="display_dialog(<{$item.item_id}>, true, true, 'slide', 'slide', 400, 700);" src="<{xoAdminIcons 'display.png'}>" alt="<{$smarty.const._PREVIEW}>" title="<{$smarty.const._PREVIEW}>" />
+            <a href="slideshow.php?op=edit_item&amp;item_id=<{$item.item_id}>"><img class="tooltip" src="<{xoAdminIcons 'edit.png'}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>
+            <a href="slideshow.php?op=delete_item&amp;item_id=<{$item.item_id}>"><img class="tooltip" src="<{xoAdminIcons 'delete.png'}>" alt="<{$smarty.const._DELETE}>" title="<{$smarty.const._DELETE}>"/></a>
         </td>
     </tr>
     <{/foreach}>
