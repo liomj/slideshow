@@ -1,7 +1,6 @@
 <{include file="$xoops_rootpath/modules/slideshow/templates/admin/slideshow_header.tpl"}>
 <table id="xo-item-sort" class="outer" cellspacing="1" width="100%">
     <thead>
-    <th><{$smarty.const._AM_SLIDESHOW_ITEM_ID}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_IMG}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_CAPTION}></th>
@@ -18,7 +17,6 @@
     <tbody class="xo-item">
     <{foreach item=item from=$items}>
     <tr class="odd" id="mod_<{$item.item_id}>">
-        <td class="width5 txtcenter"><img src="../assets/images/puce.png" alt=""/><{$item.item_id}></td>
                 <td class="txtcenter bold">
 		        <img style="max-width: 100px; max-height: 100px;" src="<{$item.imgurl}>" alt="<{$item.item_title}>" />
         </td>

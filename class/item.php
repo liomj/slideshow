@@ -121,25 +121,38 @@ class slideshow_item extends \XoopsObject
 
         $form->addElement(new XoopsFormText(_AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar('item_link', 'e')));
 
-        $link_select = new XoopsFormSelect(_AM_SLIDESHOW_TARGET, 'item_linktarget', $this->getVar('item_linktarget', 'e'));
+		$defaultTarget = $this->isNew() ? 1 : $this->getVar('item_linktarget', 'e');
 
-        $link_select->addOptionArray([0 => _AM_SLIDESHOW_TARGET_0, 1 => _AM_SLIDESHOW_TARGET_1]);
+		$link_select = new XoopsFormSelect(_AM_SLIDESHOW_TARGET, 'item_linktarget', $defaultTarget);
+		$link_select->addOptionArray([
+		0 => _AM_SLIDESHOW_TARGET_0,
+		1 => _AM_SLIDESHOW_TARGET_1
+		]);
 
         $form->addElement($link_select);
 
         $form->addElement(new XoopsFormRadioYN(_AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar('item_status', 'e')), true);
 
-		$form->addElement(new XoopsFormText(_AM_SLIDESHOW_ITEM_ORDER, 'item_order', 3, 3, $this->getVar('item_order', 'e')));
+		$defaultOrder = $this->isNew() ? 100 : $this->getVar('item_order', 'e');
+		$form->addElement(new XoopsFormText(_AM_SLIDESHOW_ITEM_ORDER, 'item_order', 3, 3, $defaultOrder));
+
 
         //if (xoops_isActiveModule('xlanguage')) {
 
         $form->addElement(new XoopsFormText(_AM_SLIDESHOW_ITEM_LANGUAGECODE, 'item_languagecode', 2, 2, $this->getVar('item_languagecode', 'e')));
 
         //}
+		
+		if ($this->isNew()) {
+		$startTimestamp = time() - 600; // 10 minutes earlier
+		$endTimestamp = strtotime('+1 year'); //default 1 year
+		} else {
+		$startTimestamp = strtotime($this->getVar('item_startdate'));
+		$endTimestamp = strtotime($this->getVar('item_enddate'));
+		}
 
-        $form->addElement(new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', strtotime($this->getVar('item_startdate'))), true);
-
-        $form->addElement(new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_ENDDATE, 'item_enddate', '', strtotime($this->getVar('item_enddate'))), true);
+		$form->addElement(new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', $startTimestamp), true);
+		$form->addElement(new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_ENDDATE, 'item_enddate', '', $endTimestamp), true);
 
         // Button
 
