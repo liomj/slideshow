@@ -95,7 +95,7 @@ switch ($op) {
 
         $info = [];
         $info['item_sort'] = 'item_order';
-        $info['item_order'] = 'DESC';
+        $info['item_order'] = 'ASC';
 
         // get item from category
         if (isset($_REQUEST['category'])) {
